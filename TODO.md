@@ -2,12 +2,14 @@
 
 ## Documentation
 
-1. Resolve issue with how flask-apispec and marshmallow are auto-generating swaggerfile; some combination of custom-decorators, wrapping marshal_with, etc. mean the auto-generated docs don't populate request parameters, headers, or response codes as written/expected.
+- Resolve issue with how flask-apispec and marshmallow are auto-generating swaggerfile; some combination of custom-decorators, wrapping marshal_with, etc. mean the auto-generated docs don't populate request parameters, headers, or response codes as written/expected.
 
-2. Build an integration to a default, pre-populated sqlite and/or Postgres database for convenience.
+- Integrate with [python-dotenv](https://pypi.org/project/python-dotenv/) to accept environment variables
 
-3. Integrate with [python-dotenv](https://pypi.org/project/python-dotenv/) to accept environment variables
+- Extend testing infrastructure to utilize [tox](https://tox.readthedocs.io/en/latest/) for testing package-version compatibility, etc.
 
-4. Write Dockerfile
+- Build an integration to a default, pre-populated sqlite and/or Postgres database for convenience.
 
-5. Write docker-compose.yml to bring up a network containing app, Postgres, etc.
+- Write Dockerfile
+
+- Write docker-compose.yml to bring up a network containing app, Postgres, etc.
