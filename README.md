@@ -3,7 +3,7 @@ This repo was designed as a simple out-of-the-box app for building custom RESTfu
 
 The repo comes with a simple healthcheck API, and a few decorators which can be customized depending on requirements.
 
-NOTE: Still a few kinks to work out with flask-apispec, there are elements of the API which aren't coming through in the documentation. For more info see TODO.md.
+**NOTE:** Still a few kinks to work out with flask-apispec, there are elements of the API which aren't coming through in the documentation. For more info see TODO.md.
 
 
 ## Requirements
