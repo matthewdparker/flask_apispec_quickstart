@@ -1,3 +1,4 @@
+import pytest
 from src.app.main import make_app
 
 
