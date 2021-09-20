@@ -1,7 +1,9 @@
 # Overview
-This repo was designed as a simple out-of-the-box app for building custom RESTful APIs. It contains patterns for utilizing marshmallow and flask-apispec for request and response schema definition, and automatic Swagger doc-gen.
+This repo was designed as a simple out-of-the-box app for building custom RESTful APIs. It utilizes marshmallow and flask-apispec for request and response schema definition and automatic Swagger doc-gen.
 
 The repo comes with a simple healthcheck API, and a few decorators which can be customized depending on requirements.
+
+NOTE: Still a few kinks to work out with flask-apispec, there are elements of the API which aren't coming through in the documentation. For more info see TODO.md.
 
 
 ## Requirements
@@ -32,7 +34,7 @@ Start a production Gunicorn server on `http://localhost:5000/` from the `/src/` 
 
 ## Testing
 
-This repo is set up with a few simple `pytest` tests, `coverage` for code coverage measurement. Tests are located under `/src/test`. To run tests from the top level directory:
+This repo is set up with a few simple `pytest` tests, and `coverage` for code coverage measurement. Tests are located under `/src/test`. To run tests from the top level directory:
 
 `$ python -m pytest --cov=src/. --cov-config=.coveragerc`
 
