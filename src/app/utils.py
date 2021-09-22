@@ -1,6 +1,14 @@
+import os
+import logging
 import functools
 from flask import request, abort
+from dotenv import dotenv_values
 from flask_apispec import marshal_with
+
+# Local imports
+from config.environment import env_config
+
+logger = logging.getLogger(__name__)
 
 
 def marshal_null_return(code, description):
@@ -16,37 +24,6 @@ def marshal_null_return(code, description):
 						code=code,
 						description=description,
 						apply=False)
-
-
-def authenticate_request(func):
-	"""
-	API request method decorator to perform request authentication, if required.
-	"""
-	def wrapper(*args, **kwargs):
-		# Implement any required authentication here
-
-		res = func(*args, **kwargs)
-		return res
-
-	return wrapper
-
-
-def check_entitlements(required_entitlements=[]):
-	"""
-	API request method decorator to check entitlements, if enforcing any.
-	"""
-	def decorator_func(func):
-		@functools.wraps(func)
-		def wrapper(*args, **kwargs):
-			# Implement any entitlements-checking here
-			if True:
-				pass
-
-			else:
-				abort(403, 'Entitlements exceeded')
-			return func(*args, **kwargs)
-		return wrapper
-	return decorator_func
 
 
 def limit_content_length(max_length=10000):

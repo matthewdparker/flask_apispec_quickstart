@@ -3,6 +3,7 @@ flask-restful
 flask-apispec
 gunicorn
 requests
+python-dotenv
 pytest
 pytest-cov
 pandas

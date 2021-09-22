@@ -1,0 +1,57 @@
+{
+  "definitions": {
+    "HealthcheckResponse": {
+      "properties": {
+        "status": {
+          "description": "The health status of the API",
+          "enum": [
+            "healthy",
+            "unhealthy"
+          ],
+          "type": "string"
+        }
+      },
+      "type": "object"
+    }
+  },
+  "info": {
+    "title": "flask-apispec",
+    "version": "v1"
+  },
+  "paths": {
+    "/healthcheck": {
+      "get": {
+        "description": "Healthcheck API",
+        "parameters": [
+          {
+            "description": "All PeopleReign Conversation API requests require an Authorization header which includes a bearer token provided by PeopleReign. The value for the Authorization header should be like: 'Bearer <bearer_token>'",
+            "in": "header",
+            "name": "Authorization",
+            "required": false,
+            "type": "string"
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "Success",
+            "schema": {
+              "$ref": "#/definitions/HealthcheckResponse"
+            }
+          },
+          "401": {
+            "description": "Request unauthorized",
+            "schema": {}
+          },
+          "422": {
+            "description": "Unprocessable entity",
+            "schema": {}
+          }
+        },
+        "tags": [
+          "Healthcheck"
+        ]
+      }
+    }
+  },
+  "swagger": "2.0"
+}
